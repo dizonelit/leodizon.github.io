@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        ul, #myUL {
+        list-style-type: none;
+        }
+
+        #myUL {
+        margin: 0;
+        padding: 0;
+        }
+
+        .caret {
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+        }
+
+        .caret::before {
+            content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .caret-down::before {
+            -ms-transform: rotate(90deg); /* IE 9 */
+            -webkit-transform: rotate(90deg); /* Safari */'
+            transform: rotate(90deg);  
+        }
+
+        .nested {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+ <ul id="myUL">
+      	<li><span class="caret">Krysanna</span>
+
+         	<ul class="nested"> 
+
+
+		  		<li><span class="caret">HR</span> 
+		  			<ul class="nested">
+		  				<li><span class="caret">James</span>
+							<ul class="nested"> 
+               					<li>TM_1</li>
+              					<li>TM_2</li>               					
+            				</ul>
+          				</li>
+          			</ul>
+   	      		</li>  
+
+ 
+
+		  		<li><span class="caret">GM</span>
+		  			<ul class="nested">
+		  				<li><span class="caret">Faby, Jorge</span>
+							<ul class="nested"> 
+               					<li>TM_1</li>
+              					<li>TM_2</li>               					
+            				</ul>
+          				</li>
+          			</ul>
+          		</li>
+                
+          		
+
+          		<li><span class="caret">Fulfillment</span>
+          			<ul class="nested">
+          				<li><span class="caret">Emily, Ulysses</span>
+            				<ul class="nested">
+               					<li>TM_1</li>
+              					<li>TM_2</li>  
+            				</ul>
+          				</li>  
+          			</ul>
+          		</li>	
+
+ 
+
+				<li><span class="caret">Service & Engagement</span>
+          			<ul class="nested">
+          				<li><span class="caret">Brea</span>
+            			    <ul class="nested">
+          				        <li><span class="caret">Adiline, Gabe, Ricky</span>
+            				        <ul class="nested">
+              					        <li>Aaron</li>
+              					       <li>Bernie</li>
+              					        <li>Cherie</li>
+              				        	<li>Hilda</li>
+              					       <li>Linda</li>
+              				        	<li>Mario</li>
+              					       <li>Sabino</li>
+            				        </ul>
+          				        </li>
+            				</ul>
+          				</li>
+          			</ul>
+          		</li>	
+
+
+				<li><span class="caret">Food & Beverage</span>
+          			<ul class="nested">
+          				<li><span class="caret">Claudia, Ramona</span>
+            				<ul class="nested">
+                				<li>TM_1</li>
+              					<li>TM_2</li>  
+            				</ul>
+          				</li>
+          			</ul>
+          		</li>	
+
+				<li><span class="caret">Specialty Sales</span>
+          			<ul class="nested">
+           				<li><span class="caret">Karla, Melanie, Nathaly</span>
+            				<ul class="nested">
+                 				<li>TM_1</li>
+              					<li>TM_2</li>  
+            				</ul>          					
+          				</li>
+          			</ul>
+          		</li>	
+
+				<li><span class="caret">Closing</span>
+          			<ul class="nested">
+          				<li><span class="caret">TL</span>
+            				<ul class="nested">
+              					<li>TM1</li>
+              					<li>TM2</li>
+            				</ul>
+          				</li>
+          			</ul>
+          		</li>	
+
+        	</ul>
+
+      	</li> <!--tgt-->
+
+</ul>
+
+
+    <!--show -->
+    <script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+    toggler[i].addEventListener("click", function() {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+        });
+    }
+    </script>
+
+
+</body>
+
+</html>
+
