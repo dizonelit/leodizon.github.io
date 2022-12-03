@@ -1,2 +1,4 @@
 # leodizon.github.io
-SimpleNow
+
+This is the local repository for github updates using git.
+
